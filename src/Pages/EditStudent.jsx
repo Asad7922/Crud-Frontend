@@ -15,7 +15,7 @@ function EditStudent() {
 
   useEffect(() => {
     // Fetch the student's current data to pre-fill the form
-    axios.get(`http://localhost:3000/student/getsinglestud/${id}`)
+    axios.get(`https://apis-making.vercel.app/student/getsinglestud/${id}`)
       .then(res => {
         setStudent(res.data);
       })

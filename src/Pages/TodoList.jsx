@@ -8,7 +8,7 @@ function TodoList() {
   const navigate = useNavigate();
 
   const fetchStudents = () => {
-    axios.get("http://localhost:3000/student/getallstudent")
+    axios.get("https://apis-making.vercel.app/student/getallstudent")
       .then(res => {
         setStudents(res.data);
       })
@@ -28,7 +28,7 @@ function TodoList() {
   };
 
   const handleDelete = (id) => {
-      axios.delete(`http://localhost:3000/student/deletesinglestud/${id}`) // Corrected endpoint format
+      axios.delete(`https://apis-making.vercel.app/student/deletesinglestud/${id}`) // Corrected endpoint format
         .then(() => {
           // Fetch students again to refresh the list
           fetchStudents(); // Re-fetch students to update the list

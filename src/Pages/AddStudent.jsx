@@ -19,7 +19,7 @@ function AddStudent() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3000/student/addstudent", student)
+    axios.post("https://apis-making.vercel.app/student/addstudent", student)
       .then(() => {
         toast.success(`${student.name} has been added successfully.`);
         setTimeout(() => {
