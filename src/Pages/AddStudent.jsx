@@ -8,7 +8,6 @@ function AddStudent() {
     name: '',
     rollno: '',
     address: '',
-    phonenmbr: '',
   });
   const navigate = useNavigate();
 
@@ -73,18 +72,7 @@ function AddStudent() {
               required
             />
           </div>
-          <div className="mb-6">
-            <label className="block text-black text-sm font-bold mb-2">Phone Number:</label>
-            <input
-              type="text"
-              name="phonenmbr"
-              value={student.phonenmbr}
-              onChange={handleChange}
-              className="w-full px-4 py-2 bg-white bg-opacity-20 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder="Enter Phone Number"
-              required
-            />
-          </div>
+         
           <button
             type="submit"
             className="w-full bg-gradient-to-r from-blue-400 to-purple-500 text-black py-2 rounded-md hover:opacity-90 focus:outline-none"
