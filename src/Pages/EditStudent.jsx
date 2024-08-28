@@ -9,7 +9,6 @@ function EditStudent() {
     name: '',
     rollno: '',
     address: '',
-  
   });
   const navigate = useNavigate();
 
@@ -33,13 +32,13 @@ function EditStudent() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Perform validation checks if needed
-    if (!student.name || !student.rollno || !student.address || !student.phonenmbr) {
+    // Perform validation checks
+    if (!student.name || !student.rollno || !student.address) {
       toast.error("Please fill in all the fields.");
       return;
     }
 
-    axios.put(`http://localhost:3000/student/updatestudent/${id}`, student)
+    axios.put(`https://apis-making.vercel.app/student/updatestudent/${id}`, student)
       .then(() => {
         toast.success(`${student.name}'s details have been updated successfully.`);
         setTimeout(() => {
@@ -54,7 +53,7 @@ function EditStudent() {
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-300">
-      <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg p-8 max-w-md w-full">
+      <div className="bg-white bg-opacity-90 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg p-8 max-w-md w-full">
         <h1 className="text-3xl text-black font-bold mb-6 text-center">Edit Student</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -64,7 +63,7 @@ function EditStudent() {
               name="name"
               value={student.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 bg-white bg-opacity-20 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2 bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               placeholder="Enter Name"
               required
             />
@@ -76,7 +75,7 @@ function EditStudent() {
               name="rollno"
               value={student.rollno}
               onChange={handleChange}
-              className="w-full px-4 py-2 bg-white bg-opacity-20 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2 bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               placeholder="Enter Roll Number"
               required
             />
@@ -88,15 +87,15 @@ function EditStudent() {
               name="address"
               value={student.address}
               onChange={handleChange}
-              className="w-full px-4 py-2 bg-white bg-opacity-20 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2 bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               placeholder="Enter Address"
               required
             />
           </div>
-          
+
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-blue-400 to-purple-500 text-black py-2 rounded-md hover:opacity-90 focus:outline-none"
+            className="w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white py-2 rounded-md hover:opacity-90 focus:outline-none"
           >
             Update Student
           </button>
